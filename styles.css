@@ -1,0 +1,90 @@
+@page {
+    size: A4;
+    margin: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    min-height: 100%;
+}
+
+body {
+    background: #f5f5f5;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.document {
+    width: 210mm;
+    margin: 16px auto;
+}
+
+.sheet {
+    width: 210mm;
+    height: 297mm;
+    padding: 5mm;
+    margin: 16px 0;
+    background: #fff;
+}
+
+.page {
+    width: 200mm;
+    height: 287mm;
+    border-radius: 4mm;
+    background: white;
+    box-shadow: 0 0 2mm 2mm #e0e0e0;
+    padding: 6mm;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8mm;
+}
+
+.name {
+    background: red;
+    margin: 0;
+    font-size: 24pt;
+    font-weight: bold;
+    text-align: left;
+}
+
+.header > div {
+    text-align: right;
+}
+
+@media print {
+    html,
+    body {
+        width: 210mm;
+        margin: 0;
+        background: #fff;
+    }
+
+    .document {
+        width: 210mm;
+        margin: 0;
+    }
+
+    .sheet {
+        margin: 0;
+        break-after: page;
+        page-break-after: always;
+    }
+
+    .sheet:last-child {
+        break-after: auto;
+        page-break-after: auto;
+    }
+
+}
