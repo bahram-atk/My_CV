@@ -38,7 +38,7 @@ body {
     height: 287mm;
     border-radius: 4mm;
     background: white;
-    box-shadow: 0 0 2mm 2mm #e0e0e0;
+    box-shadow: 0 0 3mm 2mm #e0e0e0;
     padding: 6mm;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
@@ -51,16 +51,51 @@ body {
     gap: 8mm;
 }
 
+.header > div {
+    text-align: right;
+}
+
 .name {
-    background: red;
+    background: white;
     margin: 0;
     font-size: 24pt;
     font-weight: bold;
     text-align: left;
 }
 
-.header > div {
+.designer {
+    font-size: 8pt;
+    color: rgba(102, 102, 102, 1);
     text-align: right;
+}
+
+.row-1 {
+    background: red;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8mm;
+}
+
+.cv-photo {
+    width: 33.3%;
+    height: 50mm;
+    object-fit: cover;
+    border-radius: 4mm;
+}
+
+.profile {
+    width: 33.3%;
+    height: 50mm;
+    background: blue;
+    border-radius: 4mm;
+}
+
+.interests {
+    width: 33.3%;
+    height: 50mm;
+    background: green;
+    border-radius: 4mm;
 }
 
 @media print {
