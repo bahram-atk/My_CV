@@ -36,10 +36,12 @@ body {
 .page {
     width: 200mm;
     height: 287mm;
+    display: flex;
+    flex-direction: column;
     border-radius: 4mm;
     background: white;
     box-shadow: 0 0 3mm 2mm #e0e0e0;
-    padding: 6mm;
+    padding: 3mm;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
 }
@@ -56,46 +58,279 @@ body {
 }
 
 .name {
+    color: #002f55;
     background: white;
     margin: 0;
-    font-size: 24pt;
+    font-size: 22pt;
     font-weight: bold;
     text-align: left;
 }
 
 .designer {
-    font-size: 8pt;
+    font-size: 7pt;
     color: rgba(102, 102, 102, 1);
     text-align: right;
 }
 
 .row-1 {
-    background: red;
+    margin: 2mm 0;
+    background: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 8mm;
+    gap: 3mm;
 }
 
 .cv-photo {
     width: 33.3%;
-    height: 50mm;
+    height: 48mm;
     object-fit: cover;
     border-radius: 4mm;
 }
 
+.section-title {
+    font-size: 16pt;
+    font-weight: normal;
+    margin: 2.8mm;
+    padding: 0;
+}
+
+.profile-title {
+    margin: 0;
+}
+
+.contact-title {
+    margin: 0;
+}
+
 .profile {
     width: 33.3%;
-    height: 50mm;
-    background: blue;
+    height: 48mm;
+    background: #e0e0e0;
     border-radius: 4mm;
 }
 
-.interests {
+.profile-list {
+    display: flex;
+    flex-direction: column;
+    gap: 3mm;
+    margin: 2.8mm;
+    list-style-type: none;
+}
+
+.profile-list li {
+    background: white;
+    border-radius: 2mm;
+    font-size: 10pt;
+    padding: 1mm;
+}
+
+.contact-info {
     width: 33.3%;
-    height: 50mm;
-    background: green;
+    height: 48mm;
+    background: #e0e0e0;
     border-radius: 4mm;
+}
+
+.profile-link {
+    color: black;
+    text-decoration: none;
+    list-style-type: none;
+
+}
+
+.row-2 {
+    flex: 1;
+    min-height: 0;
+    margin: 2mm 0 0;
+    background: white;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: auto minmax(0, 1fr);
+    align-items: stretch;
+    gap: 3mm;
+    width: 100%;
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 2mm;
+    margin: 2.8mm;
+}
+
+.section-icon-profile {
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    flex-shrink: 0;
+    fill: #002f55;
+}
+
+.section-title-2 {
+    font-size: 18pt;
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+}
+
+.section-icon {
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+    flex-shrink: 0;
+    fill: #002f55;
+}
+
+.education, .languages, .experience {
+    min-width: 0;
+    border-radius: 4mm;
+}
+
+.education {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.languages {
+    grid-column: 1;
+    grid-row: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+.experience {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+}
+
+.languages-list {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 2.5mm;
+    min-height: 0;
+    border-radius: 4mm;
+    background: #e0e0e0;
+    padding: 2.8mm;
+}
+
+.language-item {
+    min-width: 0;
+}
+
+.language-label {
+    display: flex;
+    justify-content: space-between;
+    gap: 2mm;
+    margin-bottom: 1mm;
+    font-size: 12pt;
+    font-weight: bold;
+}
+
+.language-track {
+    height: 3mm;
+    overflow: hidden;
+    border-radius: 2mm;
+    background: white;
+}
+
+.language-fill {
+    display: block;
+    height: 100%;
+    border-radius: inherit;
+    background: #002f55;
+}
+
+.experience {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+}
+
+.education-list, .experience-list {
+    background: #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    border-radius: 4mm;
+    list-style-type: none;
+    gap: 3mm;
+    padding: 2.8mm;
+}
+
+.experience-list {
+    flex: 1;
+    min-height: 0;
+}
+
+.education-item li, .experience-item li {
+    margin-top: 2mm;
+}
+
+.certificate-item {
+    padding: 2mm;
+    background: white;
+    border-radius: 2mm;
+}
+
+.certificate-scores {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1mm 2mm;
+    margin-top: 1mm;
+    font-size: 9pt;
+}
+
+.responsibilities {
+    margin: 1mm 0 0;
+    padding-left: 4mm;
+    font-size: 10.5pt;
+    line-height: 1.15;
+}
+
+.responsibilities li {
+    margin-top: 1mm;
+}
+
+.subject-name {
+    font-size: 14pt;
+    font-weight: bold;
+}
+
+.sub-subject-name {
+    font-size: 12pt;
+    font-weight: normal;
+    color: #002f55;
+    font-weight: bold;
+}
+
+.sub-details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 2mm;
+}
+
+.sub-details li {
+    margin-top: 0;
+}
+
+.paragraphes {
+    font-size: 13pt;
+    color: black;
+    margin-top: 0;
+}
+
+.date {
+    width: fit-content;
+    margin-left: auto;
+    background: white;
+    border-radius: 2mm;
+    font-size: 12pt;
+    padding: 2mm;
+    margin-top: 0;
+    font-weight: bold;
+
 }
 
 @media print {
